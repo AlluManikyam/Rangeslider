@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!--Plugin CSS file with desired skin-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"
+    />
+    <style>
+      .irs--flat .irs-bar {
+        top: 25px;
+        height: 12px;
+        background-color: transparent;
+      }
+      .irs--flat .irs-shadow {
+        height: 10px;
+        bottom: 4px;
+        background-color: #1861da;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="js-range-slider" id="demo_5" />
+  </body>
+
+  <!--jQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--Plugin JavaScript file-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+  <script>
+    $("#demo_5").ionRangeSlider({
+      grid: false,
+      skin: "flat",
+      type: "double",
+      min: moment("0000", "hhmm").valueOf(),
+      max: moment("2300", "hhmm").valueOf(),
+      from: moment("0900", "hhmm").valueOf(),
+      from_min: moment("0900", "hhmm").valueOf(),
+      from_max: moment("1500", "hhmm").valueOf(),
+      to_min: moment("1500", "hhmm").valueOf(),
+      to_max: moment("1500", "hhmm").valueOf(),
+      from_shadow: true,
+      to_shadow: true,
+      to: moment("1900", "hhmm").valueOf(),
+      force_edges: false,
+      drag_interval: true,
+      step: 60000,
+      min_interval: 60000,
+      // grid_num: 23,
+      prettify: function (num) {
+        return moment(num).format("hh:mm A");
+      },
+    });
+  </script>
+</html>
